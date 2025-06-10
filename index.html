@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usman Brother's - Premium Ladies Suits</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --rose-gold: #e0bfb8;
+            --blush-pink: #f8e1e4;
+            --lavender: #d8bfd8;
+            --ivory: #fffff0;
+            --soft-gold: #d4af37;
+            --text-dark: #555;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--ivory);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--rose-gold);
+            padding: 1.5rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .brand-name {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 3rem;
+            color: var(--ivory);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+            letter-spacing: 1px;
+        }
+
+        .tagline {
+            font-weight: 300;
+            color: var(--ivory);
+            margin-top: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--blush-pink);
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .nav-btn {
+            background-color: var(--rose-gold);
+            color: var(--ivory);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-btn:hover {
+            background-color: var(--lavender);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            width: 100%;
+            height: 70vh;
+            background: linear-gradient(rgba(224, 191, 184, 0.3), rgba(224, 191, 184, 0.3)), 
+                        url('https://images.unsplash.com/photo-1591047139829-d91aecb6caea') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--ivory);
+        }
+
+        .hero-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-style: italic;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 4rem 2rem;
+            background-color: var(--blush-pink);
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--rose-gold);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background-color: var(--ivory);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--soft-gold);
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+            color: var(--rose-gold);
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 4rem 2rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            height: 300px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            color: white;
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 4rem 2rem;
+            background-color: var(--blush-pink);
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--soft-gold);
+        }
+
+        .contact-form {
+            background-color: var(--ivory);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--rose-gold);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid var(--rose-gold);
+            border-radius: 5px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background-color: var(--rose-gold);
+            color: var(--ivory);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--lavender);
+            transform: translateY(-3px);
+        }
+
+        /* Prices Button */
+        .prices-btn-container {
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .prices-btn {
+            background-color: var(--soft-gold);
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .prices-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--rose-gold);
+            color: var(--ivory);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .brand-name {
+                font-size: 2.2rem;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            .hero {
+                height: 50vh;
+            }
+            
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1 class="brand-name">Usman Brother's</h1>
+        <p class="tagline">Luxury Ladies Suits, Tailored to Perfection</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <button class="nav-btn">Home</button>
+            <button class="nav-btn">Services</button>
+            <button class="nav-btn">Contact</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Elevate Your Wardrobe</h2>
+            <p>Discover our exquisite collection of premium ladies suits, crafted with elegance and precision</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-cut"></i>
+                </div>
+                <h3>Unstitched Suits</h3>
+                <p>Premium fabrics with curated designs for your perfect creation</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-tshirt"></i>
+                </div>
+                <h3>Stitched Designer Suits</h3>
+                <p>Ready-to-wear elegance for every occasion</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-ruler-combined"></i>
+                </div>
+                <h3>Custom Tailoring</h3>
+                <p>Personalized fits designed just for you</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <h3>Seasonal Collections</h3>
+                <p>Spring/Summer and Winter Festive specials</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery">
+        <h2 class="section-title">Our Collections</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea" alt="Embroidered Suit">
+                <div class="gallery-overlay">
+                    <h3>Bridal Silk Suit</h3>
+                    <p>Hand-embroidered with delicate zari work</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b" alt="Designer Suit">
+                <div class="gallery-overlay">
+                    <h3>Designer Lawn Suit</h3>
+                    <p>Lightweight summer collection</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3" alt="Party Wear">
+                <div class="gallery-overlay">
+                    <h3>Party Wear</h3>
+                    <p>Sequined evening glamour</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9" alt="Casual Wear">
+                <div class="gallery-overlay">
+                    <h3>Casual Daily Wear</h3>
+                    <p>Comfortable yet stylish</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1554412933-514a83d2f3c8" alt="Winter Collection">
+                <div class="gallery-overlay">
+                    <h3>Winter Collection</h3>
+                    <p>Warm fabrics with rich textures</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e" alt="Festive Wear">
+                <div class="gallery-overlay">
+                    <h3>Festive Wear</h3>
+                    <p>Traditional designs for special occasions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h3>Email</h3>
+                        <p>usmanbrothers112@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div>
+                        <h3>Phone</h3>
+                        <p>04237640445</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div>
+                        <h3>Working Hours</h3>
+                        <p>Mon-Sat: 10AM - 8PM</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prices Button -->
+    <div class="prices-btn-container">
+        <button class="prices-btn">View Our Prices</button>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Usman Brother's. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation buttons
+        document.querySelectorAll('.nav-btn').forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = e.target.textContent.toLowerCase();
+                if (targetId === 'home') {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    const targetSection = document.querySelector(`.${targetId}`);
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Prices button animation
+        const pricesBtn = document.querySelector('.prices-btn');
+        pricesBtn.addEventListener('mouseenter', () => {
+            pricesBtn.style.transform = 'translateY(-5px)';
+        });
+        pricesBtn.addEventListener('mouseleave', () => {
+            pricesBtn.style.transform = 'translateY(0)';
+        });
+        pricesBtn.addEventListener('click', () => {
+            alert('Thank you for your interest! Please contact us for our current price list.');
+        });
+
+        // Form submission
+        const contactForm = document.querySelector('form');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! We will contact you soon.');
+            contactForm.reset();
+        });
+    </script>
+</body>
+</html>
